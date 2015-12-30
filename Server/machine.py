@@ -1,24 +1,29 @@
-#coding:utf8
+# coding:utf8
 
-class machine:
+
+class Machine:
     def __init__(self):
         self.IP = ''
         self.hostName = ''
         self.comment = ''
 
+    @staticmethod
+    def getString(self):
+        return self.hostName+'&'+self.IP+'&'+self.comment
 
-class machineGroup:
+
+class MachineGroup:
 
     def __init__(self):
         self.group = []
 
-    def getMachine(self,hostName):
+    def getMachine(self, hostName):
         for x in self.group:
             if x.hostName == hostName:
                 return x
         return None
 
-    def deleteMachine(self,hostName):
+    def deleteMachine(self, hostName):
         for x in self.group:
             if x.hostName == hostName:
                 self.group.remove(x)

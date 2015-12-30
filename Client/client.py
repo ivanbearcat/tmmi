@@ -12,7 +12,9 @@ data = {
     'comment': 'mainPC',
     'password': 'pass'
 }
+
 postData = urllib.parse.urlencode(data).encode('utf8')
 req = urllib.request.Request(url, postData)
+req.add_header('Referer', 'http://www.python.org/')
 response = urllib.request.urlopen(req)
 print(response.read().decode('utf8'))
